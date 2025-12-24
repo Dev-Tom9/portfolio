@@ -199,7 +199,7 @@ export default function Home() {
             </div>
         </div>
         <p className="text-xs font-mono text-slate-400 uppercase tracking-widest">
-            Handcrafted by Tomiwa Samuel • © 2025
+            © 2025 | All Right Reserved.
         </p>
       </footer>
     </div>
