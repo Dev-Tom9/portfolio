@@ -60,8 +60,8 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 🏗️ HERO: SPLIT SCREEN PHOTO CARD */}
-      <section ref={heroRef} className="relative h-[180vh] px-6">
+      {/* 🏗️ HERO - Tightened to 120vh */}
+      <section ref={heroRef} className="relative h-[120vh] px-6">
         <motion.div 
           style={{ opacity, scale }}
           className="sticky top-0 h-screen w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 max-w-7xl mx-auto"
@@ -82,7 +82,7 @@ export default function Home() {
 
           <div className="flex-1 text-center lg:text-left z-10">
             <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
-              <h1 className="text-6xl md:text-[100px] font-black tracking-tighter text-white leading-[0.8] mb-8 uppercase">
+              <h1 className="text-5xl md:text-[100px] font-black tracking-tighter text-white leading-[0.8] mb-8 uppercase">
                 TOMIWA <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-400">SAMUEL.</span>
               </h1>
               <h2 className="text-lg md:text-2xl font-bold text-slate-100 tracking-tight mb-8">
@@ -101,27 +101,34 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 💻 THE FOUR PILLARS */}
-      <section className="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stackItems.map((item, i) => (
-          <motion.div 
-            key={i} 
-            whileHover={{ y: -10, backgroundColor: "rgba(37, 99, 235, 0.1)", borderColor: "rgba(37, 99, 235, 0.3)" }}
-            className="p-10 border border-white/5 bg-white/[0.02] rounded-[2.5rem] transition-all group"
-          >
-            <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 transition-transform`}>
-              {item.icon}
-            </div>
-            <h3 className="font-black text-white uppercase tracking-tight mb-3 group-hover:text-blue-400 transition-colors">{item.title}</h3>
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-tighter leading-relaxed">
-              {item.items}
-            </p>
-          </motion.div>
-        ))}
+      {/* 💻 CORE SKILLS SECTION - Gap Closed */}
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="flex flex-col items-center md:items-start mb-12">
+            <span className="text-blue-600 font-mono text-[10px] font-black tracking-[0.5em] uppercase italic mb-2">Capabilities</span>
+            <h2 className="text-4xl font-black text-white tracking-tighter uppercase">Core Skills</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {stackItems.map((item, i) => (
+            <motion.div 
+              key={i} 
+              whileHover={{ y: -10, backgroundColor: "rgba(37, 99, 235, 0.1)", borderColor: "rgba(37, 99, 235, 0.3)" }}
+              className="p-10 border border-white/5 bg-white/[0.02] rounded-[2.5rem] transition-all group"
+            >
+              <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 transition-transform`}>
+                {item.icon}
+              </div>
+              <h3 className="font-black text-white uppercase tracking-tight mb-3 group-hover:text-blue-400 transition-colors">{item.title}</h3>
+              <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-tighter leading-relaxed">
+                {item.items}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* 📊 PRODUCTION METRICS */}
-      <section className="max-w-7xl mx-auto px-6 py-32 border-y border-white/5 my-20">
+      <section className="max-w-7xl mx-auto px-6 py-24 border-y border-white/5 my-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
                 { label: "Engineering Exp", val: 5, suffix: "+" },
@@ -130,17 +137,24 @@ export default function Home() {
                 { label: "System Uptime", val: 99, suffix: "%" }
             ].map((stat, i) => (
                 <div key={i}>
-                    <div className="text-6xl font-black text-white mb-2 font-mono tabular-nums">
+                    <div className="text-4xl md:text-6xl font-black text-white mb-2 font-mono tabular-nums">
                         <Counter value={stat.val} suffix={stat.suffix} />
                     </div>
-                    <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] italic">{stat.label}</p>
+                    <p className="text-[8px] md:text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] italic">{stat.label}</p>
                 </div>
             ))}
         </div>
       </section>
 
-      {/* 🚀 SYSTEMS SECTION - WITH IMPACT STATS ADDED */}
-      <section id="systems" className="max-w-7xl mx-auto px-6 py-40 space-y-60">
+      {/* 🚀 SYSTEMS SECTION - Header Added */}
+      <section id="systems" className="max-w-7xl mx-auto px-6 py-20 md:py-40">
+        
+        <div className="flex flex-col items-center md:items-start mb-24">
+            <span className="text-blue-600 font-mono text-[10px] font-black tracking-[0.5em] uppercase italic mb-2">Portfolio</span>
+            <h2 className="text-4xl font-black text-white tracking-tighter uppercase">Selected Projects</h2>
+        </div>
+
+        <div className="space-y-32 md:space-y-60">
         {[
           {
             title: "Nexus AI-Ops",
@@ -167,51 +181,52 @@ export default function Home() {
             src: "/hirelogic.png", type: "image"
           }
         ].map((p, i) => (
-          <div key={i} className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-24 items-center`}>
+          <div key={i} className={`flex flex-col-reverse ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 md:gap-24 items-center`}>
+            
+            <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
+              <span className="text-blue-600 font-mono text-[10px] font-black tracking-[0.5em] uppercase italic">System_0{i+1}</span>
+              <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">{p.title}</h3>
+              <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed italic">"{p.desc}"</p>
+              
+              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 font-black text-[10px] uppercase tracking-widest">
+                <TrendingUp size={14} /> {p.impact}
+              </div>
+
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-4">
+                {p.tech.map(t => <span key={t} className="px-5 py-2 bg-white/5 rounded-xl text-[10px] font-black text-slate-400 uppercase tracking-widest">{t}</span>)}
+              </div>
+            </div>
+
             <motion.div 
                whileHover={{ scale: 1.02 }}
-               className="flex-1 w-full aspect-video rounded-[3.5rem] overflow-hidden relative group cursor-pointer"
+               className="flex-1 w-full aspect-video rounded-[2rem] md:rounded-[3.5rem] overflow-hidden relative group cursor-pointer border border-white/5 shadow-2xl"
             >
               {p.type === "video" ? (
                 <video src={p.src} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               ) : (
                 <img src={p.src} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
               )}
-              <div className="absolute top-10 right-10 bg-blue-600 text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest z-10">{p.tag}</div>
+              <div className="absolute top-6 right-6 md:top-10 md:right-10 bg-blue-600 text-white px-4 py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest z-10">{p.tag}</div>
             </motion.div>
-
-            <div className="flex-1 space-y-8">
-              <span className="text-blue-600 font-mono text-[10px] font-black tracking-[0.5em] uppercase italic">System_0{i+1}</span>
-              <h3 className="text-6xl font-black text-white tracking-tighter uppercase leading-none">{p.title}</h3>
-              <p className="text-xl text-slate-500 font-medium leading-relaxed italic">"{p.desc}"</p>
-              
-              {/* IMPACT BADGE ADDED HERE */}
-              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 font-black text-[10px] uppercase tracking-widest">
-                <TrendingUp size={14} /> {p.impact}
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-4">
-                {p.tech.map(t => <span key={t} className="px-5 py-2 bg-white/5 rounded-xl text-[10px] font-black text-slate-400 uppercase tracking-widest">{t}</span>)}
-              </div>
-            </div>
           </div>
         ))}
+        </div>
       </section>
 
-      {/* 🛠️ FULL STACK EXPERTISE SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-40 border-t border-white/5">
-        <div className="text-center mb-24">
+      {/* 🛠️ FULL STACK EXPERTISE */}
+      <section className="max-w-7xl mx-auto px-6 py-32 border-t border-white/5">
+        <div className="text-center mb-16 md:mb-24">
             <h2 className="text-[10px] font-black tracking-[0.5em] text-blue-600 uppercase mb-4 italic">The Architecture</h2>
-            <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase">End-to-End Expertise</h3>
+            <h3 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase">End-to-End Expertise</h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
                 { icon: <Layout />, label: "Frontend", tools: "Next.js, React, Tailwind, Framer Motion" },
                 { icon: <Braces />, label: "Backend", tools: "Node.js, FastAPI, Go, GraphQL" },
                 { icon: <Layers />, label: "Databases", tools: "PostgreSQL, MongoDB, Redis, ChromaDB" },
                 { icon: <Smartphone />, label: "Mobile/Native", tools: "React Native, Progressive Web Apps" }
             ].map((skill, idx) => (
-                <motion.div key={idx} whileHover={{ y: -5 }} className="bg-white/[0.01] p-10 rounded-[3rem] border border-white/5 text-center group">
+                <motion.div key={idx} whileHover={{ y: -5 }} className="bg-white/[0.01] p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] border border-white/5 text-center group">
                     <div className="text-blue-600 flex justify-center mb-6 group-hover:scale-110 transition-transform">
                         {skill.icon}
                     </div>
@@ -234,10 +249,10 @@ export default function Home() {
             <motion.div 
               key={i} 
               whileHover={{ x: 15, backgroundColor: "rgba(255, 255, 255, 0.02)" }}
-              className="p-10 border border-white/5 bg-white/[0.01] rounded-[3rem] flex flex-col md:flex-row justify-between items-start md:items-center group transition-all"
+              className="p-8 md:p-10 border border-white/5 bg-white/[0.01] rounded-[2rem] md:rounded-[3rem] flex flex-col md:flex-row justify-between items-start md:items-center group transition-all"
             >
               <div>
-                <h4 className="text-2xl font-black text-white uppercase group-hover:text-blue-600 transition-colors tracking-tight">{exp.r}</h4>
+                <h4 className="text-xl md:text-2xl font-black text-white uppercase group-hover:text-blue-600 transition-colors tracking-tight">{exp.r}</h4>
                 <p className="text-blue-500/60 font-black uppercase text-[10px] tracking-[0.2em] mb-4">{exp.c}</p>
                 <p className="text-slate-500 text-sm max-w-md italic">"{exp.desc}"</p>
               </div>
@@ -249,7 +264,7 @@ export default function Home() {
 
       {/* 🎓 EDUCATION & CERTS */}
       <section className="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-white/5">
-          <div className="bg-white/[0.01] p-12 rounded-[4rem] border border-white/5 group hover:border-blue-600/30 transition-all">
+          <div className="bg-white/[0.01] p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] border border-white/5 group hover:border-blue-600/30 transition-all">
               <GraduationCap className="text-blue-600 mb-8" size={32} />
               <h3 className="text-2xl font-black text-white uppercase mb-10 tracking-tighter">Academic Foundation</h3>
               <div className="space-y-10">
@@ -257,24 +272,24 @@ export default function Home() {
                       <div className="text-blue-600 font-black text-xl italic font-mono">01</div>
                       <div>
                         <p className="text-white font-black uppercase text-lg leading-tight">B.Eng – Biomedical Engineering</p>
-                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">University of Benin | Benin-City, Edo State</p>
+                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">University of Benin</p>
                       </div>
                   </div>
                   <div className="flex gap-6">
                       <div className="text-blue-600 font-black text-xl italic font-mono">02</div>
                       <div>
                         <p className="text-white font-black uppercase text-lg leading-tight">Diploma – Computer Software Engineering</p>
-                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">City Institute of Management & Technology | Nasarawa State</p>
+                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">City Institute of Management</p>
                       </div>
                   </div>
               </div>
           </div>
-          <div className="bg-white/[0.01] p-12 rounded-[4rem] border border-white/5 group hover:border-blue-600/30 transition-all">
+          <div className="bg-white/[0.01] p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] border border-white/5 group hover:border-blue-600/30 transition-all">
               <Award className="text-blue-600 mb-8" size={32} />
               <h3 className="text-2xl font-black text-white uppercase mb-10 tracking-tighter">Certifications</h3>
               <div className="grid grid-cols-1 gap-4">
-                  {["IBM Certified Full Stack Developer (2025)", "AI/ML Engineering Essentials (2025)", "ICT Facilitator Certification", "SQL Specialist — W3Schools"].map(cert => (
-                      <div key={cert} className="px-8 py-5 bg-white/5 rounded-2xl text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-4 hover:bg-blue-600 hover:text-white transition-all cursor-default group/item">
+                  {["IBM Certified Full Stack Developer", "AI/ML Engineering Essentials", "SQL Specialist — W3Schools"].map(cert => (
+                      <div key={cert} className="px-6 py-5 bg-white/5 rounded-2xl text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-4 hover:bg-blue-600 hover:text-white transition-all cursor-default group/item">
                           <CheckCircle2 size={16} className="text-blue-600 group-hover/item:text-white" /> {cert}
                       </div>
                   ))}
@@ -283,17 +298,17 @@ export default function Home() {
       </section>
 
       {/* 📞 FOOTER */}
-      <footer className="bg-white text-black py-40 px-6 rounded-t-[6rem] text-center relative overflow-hidden">
-          <h2 className="text-[12rem] font-black tracking-tighter mb-10 opacity-5 select-none leading-none">TOMIWA</h2>
-          <p className="text-2xl font-bold mb-12 uppercase tracking-tight italic">"Systems Architected for Production."</p>
+      <footer className="bg-white text-black py-24 md:py-40 px-6 rounded-t-[4rem] md:rounded-t-[6rem] text-center relative overflow-hidden">
+          <h2 className="text-[6rem] md:text-[12rem] font-black tracking-tighter mb-10 opacity-5 select-none leading-none">TOMIWA</h2>
+          <p className="text-xl md:text-2xl font-bold mb-12 uppercase tracking-tight italic">"Systems Architected for Production."</p>
           <motion.a 
             whileHover={{ scale: 1.1 }}
             href="mailto:otenesams9@gmail.com" 
-            className="bg-black text-white px-16 py-7 rounded-full font-black text-xl hover:bg-blue-600 transition-all inline-flex items-center gap-4 shadow-2xl"
+            className="bg-black text-white px-10 py-5 md:px-16 md:py-7 rounded-full font-black text-lg md:text-xl hover:bg-blue-600 transition-all inline-flex items-center gap-4 shadow-2xl"
           >
               <Mail size={24} /> GET IN TOUCH
           </motion.a>
-          <div className="mt-40 font-mono text-[10px] tracking-[0.5em] text-slate-400 uppercase">
+          <div className="mt-24 md:mt-40 font-mono text-[8px] md:text-[10px] tracking-[0.5em] text-slate-400 uppercase">
               Abuja, Nigeria // Portfolio v9.0 // &copy; 2025
           </div>
       </footer>
