@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #ffffff;
+  color: #0f172a;
+  scroll-behavior: smooth;
+}
+
+.project-card {
+  @apply bg-white border border-gray-100 rounded-3xl p-8 transition-all duration-300;
+  box-shadow: 0 4px 20px -5px rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+  @apply -translate-y-2 border-blue-500 shadow-xl shadow-blue-50/50;
+}
