@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 🏗️ HERO - Tightened to 120vh */}
+      {/* 🏗️ HERO */}
       <section ref={heroRef} className="relative h-[120vh] px-6">
         <motion.div 
           style={{ opacity, scale }}
@@ -76,7 +76,7 @@ export default function Home() {
               />
             </div>
             <div className="absolute -bottom-4 -right-4 z-20 bg-white text-black px-6 py-4 rounded-2xl shadow-2xl font-mono text-[10px] font-black uppercase tracking-widest">
-              Lvl. 5 // Senior
+              Abuja, NG // Open to Work
             </div>
           </div>
 
@@ -86,14 +86,14 @@ export default function Home() {
                 TOMIWA <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-400">SAMUEL.</span>
               </h1>
               <h2 className="text-lg md:text-2xl font-bold text-slate-100 tracking-tight mb-8">
-                Software Engineer <span className="text-blue-600">|</span> Cloud / DevOps Specialist <span className="text-blue-600">|</span> AI Automations
+                Backend & AI Engineer <span className="text-blue-600">|</span> Python · FastAPI · LLMs <span className="text-blue-600">|</span> RAG Systems
               </h2>
               <p className="text-slate-500 max-w-xl text-lg leading-relaxed mb-10 italic">
-                "5+ years of architecting production-grade systems for startups and global enterprises, delivering scalable AI-driven solutions."
+                "5+ years building production-grade AI-powered systems — from backend APIs and LLM pipelines to full-stack SaaS products."
               </p>
               <div className="flex justify-center lg:justify-start">
                 <a href="#systems" className="bg-white/5 border border-white/10 hover:border-blue-600 text-white px-10 py-4 rounded-full font-black uppercase text-xs tracking-widest transition-all inline-flex items-center gap-3">
-                  View Deployments <MoveRight size={16} />
+                  View Projects <MoveRight size={16} />
                 </a>
               </div>
             </motion.div>
@@ -101,7 +101,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 💻 CORE SKILLS SECTION - Gap Closed */}
+      {/* 💻 CORE SKILLS SECTION */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="flex flex-col items-center md:items-start mb-12">
             <span className="text-blue-600 font-mono text-[10px] font-black tracking-[0.5em] uppercase italic mb-2">Capabilities</span>
@@ -146,7 +146,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🚀 SYSTEMS SECTION - Header Added */}
+      {/* 🚀 PROJECTS SECTION */}
       <section id="systems" className="max-w-7xl mx-auto px-6 py-20 md:py-40">
         
         <div className="flex flex-col items-center md:items-start mb-24">
@@ -159,26 +159,26 @@ export default function Home() {
           {
             title: "Nexus AI-Ops",
             tag: "INTERNAL AUTOMATION",
-            desc: "A centralized AI operations hub for document intelligence and asynchronous task orchestration via autonomous agents.",
-            impact: "30% Revenue Growth",
+            desc: "A centralised AI operations hub for document intelligence and workflow automation — summarisation, report writing, email drafting, and meeting note processing.",
+            impact: "40% Workload Reduction",
             tech: ["Python", "FastAPI", "OpenAI", "Docker"],
             src: "/nexus-demo.mp4", type: "video"
           },
           {
-            title: "CognitoDesk",
-            tag: "KNOWLEDGE SYSTEMS",
-            desc: "Enterprise-grade knowledge automation platform using semantic search to automate complex support logic.",
-            impact: "35% API Efficiency Boost",
-            tech: ["ChromaDB", "Python", "React", "FastAPI"],
-            src: "/cognitodesk.png", type: "image"
-          },
-          {
             title: "HireLogic",
-            tag: "BETA RELEASE",
-            desc: "AI-powered hiring platform that parses CVs and ranks candidates using explainable AI models.",
-            impact: "99% System Reliability",
+            tag: "LIVE — AI RECRUITMENT",
+            desc: "AI-powered hiring platform that parses CVs, ranks candidates using semantic embeddings, and generates explainable hiring recommendations.",
+            impact: "65% Faster Screening",
             tech: ["Next.js", "OpenAI", "Vector DB", "FastAPI"],
             src: "/hirelogic.png", type: "image"
+          },
+          {
+            title: "SynapsAI",
+            tag: "LIVE — NLP TOOL",
+            desc: "AI-powered web app that condenses long documents, articles, and reports into clear, structured bullet-point summaries using LLMs.",
+            impact: "LLM · NLP · Streamlit",
+            tech: ["Python", "Streamlit", "OpenAI", "NLP"],
+            src: "/synapsai.png", type: "image"
           }
         ].map((p, i) => (
           <div key={i} className={`flex flex-col-reverse ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 md:gap-24 items-center`}>
@@ -222,9 +222,9 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
                 { icon: <Layout />, label: "Frontend", tools: "Next.js, React, Tailwind, Framer Motion" },
-                { icon: <Braces />, label: "Backend", tools: "Node.js, FastAPI, Go, GraphQL" },
+                { icon: <Braces />, label: "Backend", tools: "Python, FastAPI, Node.js, REST APIs" },
                 { icon: <Layers />, label: "Databases", tools: "PostgreSQL, MongoDB, Redis, ChromaDB" },
-                { icon: <Smartphone />, label: "Mobile/Native", tools: "React Native, Progressive Web Apps" }
+                { icon: <Cpu />, label: "AI / LLMs", tools: "OpenAI, LangChain, RAG, Embeddings, NLP" }
             ].map((skill, idx) => (
                 <motion.div key={idx} whileHover={{ y: -5 }} className="bg-white/[0.01] p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] border border-white/5 text-center group">
                     <div className="text-blue-600 flex justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -237,14 +237,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 💼 EXPERIENCE LOG */}
+      {/* 💼 EXPERIENCE */}
       <section className="max-w-5xl mx-auto px-6 py-40 border-t border-white/5">
         <h2 className="text-[10px] font-black tracking-[0.5em] text-slate-700 uppercase mb-24 text-center">Operational Trajectory</h2>
         <div className="space-y-6">
           {[
-            { r: "Lead Software Developer", c: "CT Tech", d: "2020 — PRESENT", desc: "Architected e-commerce platform boosting revenue by 30%." },
-            { r: "Node.js Developer (Contract)", c: "Remote", d: "2025", desc: "Increased API speed by 35% through performance tuning." },
-            { r: "Web Developer & UX Lead", c: "Dicho Technology", d: "2025", desc: "Developing production web systems and managing deployments." }
+            { r: "Full-Stack Developer", c: "Dicho Technology", d: "2025 — PRESENT", desc: "Building and deploying production web applications, integrating payment gateways and REST APIs." },
+            { r: "Lead Technical Instructor", c: "NexaDev Academy", d: "2025 — PRESENT", desc: "Mentoring developers through real-world projects, reviewing production codebases, and guiding job readiness." },
+            { r: "Node.js Developer (Contract)", c: "Remote", d: "JUN — OCT 2025", desc: "Improved API performance by 35% through targeted backend and database optimisations." },
+            { r: "Software Engineer", c: "CT Tech", d: "2020 — 2025", desc: "Designed and deployed multiple full-stack SaaS platforms with secure APIs and Dockerised CI/CD pipelines." }
           ].map((exp, i) => (
             <motion.div 
               key={i} 
@@ -272,14 +273,14 @@ export default function Home() {
                       <div className="text-blue-600 font-black text-xl italic font-mono">01</div>
                       <div>
                         <p className="text-white font-black uppercase text-lg leading-tight">B.Eng – Biomedical Engineering</p>
-                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">University of Benin</p>
+                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">University of Benin · In View 2026</p>
                       </div>
                   </div>
                   <div className="flex gap-6">
                       <div className="text-blue-600 font-black text-xl italic font-mono">02</div>
                       <div>
                         <p className="text-white font-black uppercase text-lg leading-tight">Diploma – Computer Software Engineering</p>
-                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">City Institute of Management</p>
+                        <p className="text-slate-600 text-[10px] font-bold tracking-[0.2em] uppercase">City Institute of Management · 2020</p>
                       </div>
                   </div>
               </div>
@@ -288,7 +289,7 @@ export default function Home() {
               <Award className="text-blue-600 mb-8" size={32} />
               <h3 className="text-2xl font-black text-white uppercase mb-10 tracking-tighter">Certifications</h3>
               <div className="grid grid-cols-1 gap-4">
-                  {["IBM Certified Full Stack Developer", "AI/ML Engineering Essentials", "SQL Specialist — W3Schools"].map(cert => (
+                  {["IBM Certified Full Stack Developer", "AI/ML Engineering Essentials — NexaDev", "Introduction to Medical Software — Nile University", "SQL Specialist — W3Schools"].map(cert => (
                       <div key={cert} className="px-6 py-5 bg-white/5 rounded-2xl text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-4 hover:bg-blue-600 hover:text-white transition-all cursor-default group/item">
                           <CheckCircle2 size={16} className="text-blue-600 group-hover/item:text-white" /> {cert}
                       </div>
@@ -300,7 +301,7 @@ export default function Home() {
       {/* 📞 FOOTER */}
       <footer className="bg-white text-black py-24 md:py-40 px-6 rounded-t-[4rem] md:rounded-t-[6rem] text-center relative overflow-hidden">
           <h2 className="text-[6rem] md:text-[12rem] font-black tracking-tighter mb-10 opacity-5 select-none leading-none">TOMIWA</h2>
-          <p className="text-xl md:text-2xl font-bold mb-12 uppercase tracking-tight italic">"Systems Architected for Production."</p>
+          <p className="text-xl md:text-2xl font-bold mb-12 uppercase tracking-tight italic">"Building AI systems that ship to production."</p>
           <motion.a 
             whileHover={{ scale: 1.1 }}
             href="mailto:otenesams9@gmail.com" 
@@ -309,7 +310,7 @@ export default function Home() {
               <Mail size={24} /> GET IN TOUCH
           </motion.a>
           <div className="mt-24 md:mt-40 font-mono text-[8px] md:text-[10px] tracking-[0.5em] text-slate-400 uppercase">
-              Abuja, Nigeria // Portfolio v9.0 // &copy; 2025
+              Abuja, Nigeria // Portfolio v9.0 // &copy; {new Date().getFullYear()}
           </div>
       </footer>
     </div>
